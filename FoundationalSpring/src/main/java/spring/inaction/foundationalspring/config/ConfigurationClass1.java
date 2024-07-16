@@ -12,4 +12,5 @@ public class ConfigurationClass1 {
     public ConfigurationClass1 bean1(){
         return new ConfigurationClass1();
     }
+
 }
