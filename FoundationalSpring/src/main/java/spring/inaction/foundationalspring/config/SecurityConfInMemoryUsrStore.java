@@ -29,5 +29,5 @@ public class SecurityConfInMemoryUsrStore {
 //                .roles("USER")
 //                .build();
 //        return new InMemoryUserDetailsManager(userA,userB);
-//    }
+    //}
 }

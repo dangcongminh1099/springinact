@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import spring.inaction.foundationalspring.service.dto.UDDto;
 
 /*
 - UserDetailsService
@@ -18,11 +19,15 @@ public class UDServiceH2Datasource implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // tạm thời return dữ liệu tĩnh
-//        UserDetails user = User.withUsername("minhdc3")
-//                .username("user")
-//                .password(pe.encode("password"))
-//                .roles("USER")
-//                .build();
-        return null;
+        UDDto udDto = UDDto.builder()
+                .userName("minhdc3")
+                .password("")
+                .build();
+
+        if (udDto != null) {
+            return udDto;
+        }
+        throw new UsernameNotFoundException(
+                "User '" + username + "' not found");
     }
 }
